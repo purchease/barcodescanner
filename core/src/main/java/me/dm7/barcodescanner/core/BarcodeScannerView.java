@@ -18,6 +18,7 @@ public abstract class BarcodeScannerView extends FrameLayout implements Camera.P
     private CameraHandlerThread mCameraHandlerThread;
     private Boolean mFlashState;
     private boolean mAutofocusState = true;
+    private boolean mBulkMode;
 
     public BarcodeScannerView(Context context) {
         super(context);
@@ -174,5 +175,9 @@ public abstract class BarcodeScannerView extends FrameLayout implements Camera.P
         if(mPreview != null) {
             mPreview.setAutoFocus(state);
         }
+    }
+    
+    public void setBulkMode(boolean bulkmode) {
+        mBulkMode = bulkmode;
     }
 }

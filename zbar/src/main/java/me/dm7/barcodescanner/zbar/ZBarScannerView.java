@@ -124,7 +124,9 @@ public class ZBarScannerView extends BarcodeScannerView {
                         ResultHandler tmpResultHandler = mResultHandler;
                         mResultHandler = null;
                         
-                        stopCameraPreview();
+                        if (!mBulkMode) {
+                            stopCameraPreview();
+                        }
                         if (tmpResultHandler != null) {
                             tmpResultHandler.handleResult(rawResult);
                         }
